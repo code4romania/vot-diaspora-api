@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 export interface ILocationSearchResponse {
   suggestions: AddressSuggestion[];
@@ -91,33 +91,37 @@ export interface LocationDetailsResponse {
   response: LocationDetails;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class HereAddressService {
+  private readonly suggestUrl =
+    "https://autocomplete.geocoder.ls.hereapi.com/6.2/suggest.json";
+  private readonly geocoderUrl =
+    "https://geocoder.ls.hereapi.com/6.2/geocode.json";
 
-  private readonly suggestUrl = 'https://autocomplete.geocoder.ls.hereapi.com/6.2/suggest.json';
-  private readonly geocoderUrl = 'https://geocoder.ls.hereapi.com/6.2/geocode.json';
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   suggest(location: string): Observable<ILocationSearchResponse> {
     let params = new HttpParams();
 
-    params = params.append('query', location);
-    params = params.append('maxresults', '5');
-    params = params.append('apikey', hereMapsToken);
+    params = params.append("query", location);
+    params = params.append("maxresults", "5");
+    params = params.append("apikey", hereMapsToken);
 
-    return this.httpClient.get<ILocationSearchResponse>(this.suggestUrl, { params: params });
+    return this.httpClient.get<ILocationSearchResponse>(this.suggestUrl, {
+      params: params,
+    });
   }
 
   getLocationDetails(locationId: string): Observable<LocationDetailsResponse> {
     let params = new HttpParams();
 
-    params = params.append('locationid', locationId);
-    params = params.append('jsonattributes', '1');
-    params = params.append('gen', '1');
-    params = params.append('apikey', hereMapsToken);
+    params = params.append("locationid", locationId);
+    params = params.append("jsonattributes", "1");
+    params = params.append("gen", "1");
+    params = params.append("apikey", hereMapsToken);
 
-    return this.httpClient.get<LocationDetailsResponse>(this.geocoderUrl, { params: params });
+    return this.httpClient.get<LocationDetailsResponse>(this.geocoderUrl, {
+      params: params,
+    });
   }
-
 }
