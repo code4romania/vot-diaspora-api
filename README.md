@@ -1,10 +1,11 @@
 # Vot diaspora - API
 
+[![Docker tag](https://img.shields.io/docker/v/code4romania/vot-diaspora?style=for-the-badge)](https://hub.docker.com/r/code4romania/vot-diaspora/tags)
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/vot-diaspora-api.svg?style=for-the-badge)](https://github.com/code4romania/vot-diaspora-api/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/vot-diaspora-api.svg?style=for-the-badge)](https://github.com/code4romania/vot-diaspora-api/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
 
 Vot Diaspora is a platform that simplifies the electoral guide for the 6th of December elections for citizens. Vot Diaspora is Code for Romania's first ever project, starting with 2016, in order to facilitate access to electoral information for Romanians abroad and foster a more transparent process. 25% of all voters abroad used the app for the 2019 European Parliament elections and over 185.000 voters used it at the 2019 presidential elections.
 
-[See the project live](https://votdiaspora.ro/en)
+[See the project live](https://votdiaspora.ro)
 
 By accessing votdiaspora.ro, all citizens can check the required documents for voting, the correct procedures for voting either at polling stations or via mail-in ballot and their alotted polling station and the closest route. The Website will be available and updated for each new round of elections. All content available on the Vot Diaspora platform is done in collaboration with Observatorul Electoral electoral experts.
 
@@ -14,26 +15,39 @@ By accessing votdiaspora.ro, all citizens can check the required documents for v
 
 This project is built by amazing volunteers and you can be one of them! Here's a list of ways in [which you can contribute to this project](https://github.com/code4romania/.github/blob/master/CONTRIBUTING.md). If you want to make any change to this repository, please **make a fork first**.
 
-If you would like to suggest new functionality, open an Issue and mark it as a __[Feature request]__. Please be specific about why you think this functionality will be of use. If you can, please include some visual description of what you would like the UI to look like, if you are suggesting new UI elements. 
+If you would like to suggest new functionality, open an Issue and mark it as a **[Feature request]**. Please be specific about why you think this functionality will be of use. If you can, please include some visual description of what you would like the UI to look like, if you are suggesting new UI elements.
 
 ## Built With
 
-.Net Core 3.1
+.net core 3.1 and Angular 8
 
-## Repos and projects
+### Programming languages
 
-Client app - https://github.com/code4romania/vot-diaspora-client
+C# 8
+
+### Frontend framework for admin
+
+Angular 8
+
+### Frontend for user facing app
+
+[vot-diaspora-client](https://github.com/code4romania/vot-diaspora-client) (Nuxtjs)
+
+### Database technology & provider
+
+SQLite
 
 ## Deployment
 
-
+1. Add a new tag to the repository
+2. Go to the [Code4ro k8s manifest repo](https://github.com/code4romania/code4ro-k8s) and update the k8s manifest with the new image tag
 
 ## Feedback
 
-* Request a new feature on GitHub.
-* Vote for popular feature requests.
-* File a bug in GitHub Issues.
-* Email us with other feedback contact@code4.ro
+- Request a new feature on GitHub.
+- Vote for popular feature requests.
+- File a bug in GitHub Issues.
+- Email us with other feedback contact@code4.ro
 
 ## License
 
